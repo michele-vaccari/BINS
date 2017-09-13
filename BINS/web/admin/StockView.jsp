@@ -1,9 +1,9 @@
 <%-- 
-    Document   : CouponView
+    Document   : WarehouseView
     Author     : Michele
 --%>
 
-<%@ page info="Gestione Coupon" %>
+<%@ page info="Gestione Magazzino" %>
 <%@ page contentType="text/html" %>
 <%@ page session="false" %>
 <%@ page buffer="20kb" %>
@@ -78,12 +78,12 @@
                     <!-- Header Pannello -->
                     <div class="st-panel__header">
                       <div class="fluid-cols">
-                        <div class="expand-col text-ellipsis"><span class="st-panel__title"><span>Coupon</span><small id="coupons-info"></small></span></div>
+                        <div class="expand-col text-ellipsis"><span class="st-panel__title"><span>Magazzino Prodotti</span><small id="products-info"></small></span></div>
                         <div class="min-col">
                           <div class="st-panel__form">
                             <div class="st-inputbar hidden-xs">
                               <div class="st-inputbar-input hidden-xs">
-                                <input class="form-control input-sm" id="coupons-search" type="text" placeholder="Cerca" style="width: 200px;">
+                                <input class="form-control input-sm" id="products-search" type="text" placeholder="Cerca" style="width: 200px;">
                               </div>
                             </div>
                           </div>
@@ -94,15 +94,18 @@
                     <!-- Tabella -->
                     <div class="st-panel__content">
                       <div class="table-responsive table-responsive-bordered avoid-flicker" width="100%">
-                        <table class="table table-bordered table-filled table-striped table-hover" id="coupons-table" width="100%">
+                        <table class="table table-bordered table-filled table-striped table-hover" id="products-table" width="100%">
                           
                           <!-- Intestazione Tabella -->
                           <thead>
                             <tr>
                               <th class="text-nowrap">Id</th>
-                              <th class="text-nowrap content-width">Ente Erogatore</th>
-                              <th class="text-nowrap content-width">Importo</th>
-                              <th class="text-nowrap content-width">Stato</th>
+                              <th class="text-nowrap content-width">EAN</th>
+                              <th class="text-nowrap content-width">Nome</th>
+                              <th class="text-nowrap content-width">Quantit&agrave;</th>
+                              <th class="text-nowrap content-width">Tipo</th>
+                              <th class="text-nowrap content-width">Data Scadenza</th>
+                              <th class="text-nowrap content-width">Data Inserimento</th>
                               <th class="text-nowrap content-width">Gestito da</th>
                               <th class="text-center content-width">Azione</th>
                             </tr>
@@ -111,35 +114,61 @@
                           <!-- Contenuto Tabella -->
                           <tbody>
                             
-                            <tr data-coupon="1234567890">
-                              <td class="text-nowrap" data-filter="1234567890">1234567890</td>
-                              <td class="text-center" data-filter="Ente1">Ente1</td>
-                              <td class="text-center" data-filter="15.00">&euro; 15.00</td>
-                              <td class="text-center" data-sort="0" data-filter="Usato"><span class="label label-danger">Usato</span></td>
+                            <tr data-product="1">
+                              <td class="text-nowrap content-width" data-filter="1">1</td>
+                              <td class="text-nowrap" data-filter="1234567890ABC">1234567890ABC</td>
+                              <td class="text-center" data-filter="Nome1">Nome1</td>
+                              <td class="text-center content-width" data-filter="3">3</td>
+                              <td class="text-center" data-sort="1" data-filter="Attivo"><span class="label label-success">Attivo</span></td>
+                              <td class="text-nowrap" data-filter="Marchio1">Marchio1</td>
+                              <td class="text-center" data-filter="4"><small>x</small>&nbsp;4</td>
                               <td class="text-nowrap" data-filter="Admin2">Admin2</td>
-                              <td class="text-center st-coupons__action">
+                              <td class="text-center st-products__action">
                                 <div class="btn-group dropdown"><a class="btn btn-default btn-xs" href="#">Visualizza</a>
                                   <button class="btn btn-default btn-xs dropdown-toggle" type="button" data-toggle="dropdown" data-container="body"><span class="caret"></span></button>
                                   <ul class="dropdown-menu dropdown-menu-right">
-                                    <li><a class="coupons-edit" data-coupon="1234567890">Modifica</a></li>
-                                    <li><a class="coupons-remove" data-coupon="1234567890">Elimina</a></li>
+                                    <li><a class="products-edit" data-product="1">Modifica</a></li>
+                                    <li><a class="products-remove" data-product="1">Elimina</a></li>
                                   </ul>
                                 </div>
                               </td>
                             </tr>
                             
-                            <tr data-coupon="123456789">
-                              <td class="text-nowrap" data-filter="123456789">123456789</td>
-                              <td class="text-center" data-filter="Ente2">Ente2</td>
-                              <td class="text-center" data-filter="10.00">&euro; 10.00</td>
-                              <td class="text-center" data-sort="1" data-filter="Disponibile"><span class="label label-success">Disponibile</span></td>
+                            <tr data-product="2">
+                              <td class="text-nowrap" data-filter="2">2</td>
+                              <td class="text-nowrap" data-filter="1234567890ACD">1234567890ACD</td>
+                              <td class="text-center" data-filter="Nome2">Nome2</td>
+                              <td class="text-center" data-filter="1">1</td>
+                              <td class="text-center" data-sort="-1" data-filter="Scaduto"><span class="label label-danger">Scaduto</span></td>
+                              <td class="text-nowrap" data-filter="Marchio2">Marchio2</td>
+                              <td class="text-center" data-filter="3"><small>x</small>&nbsp;3</td>
                               <td class="text-nowrap" data-filter="Admin1">Admin1</td>
-                              <td class="text-center st-coupons__action">
+                              <td class="text-center st-products__action">
                                 <div class="btn-group dropdown"><a class="btn btn-default btn-xs" href="#">Visualizza</a>
                                   <button class="btn btn-default btn-xs dropdown-toggle" type="button" data-toggle="dropdown" data-container="body"><span class="caret"></span></button>
                                   <ul class="dropdown-menu dropdown-menu-right">
-                                    <li><a class="coupons-edit" data-coupon="123456789">Modifica</a></li>
-                                    <li><a class="coupons-remove" data-coupon="123456789">Elimina</a></li>
+                                    <li><a class="products-edit" data-product="2">Modifica</a></li>
+                                    <li><a class="products-remove" data-product="2">Elimina</a></li>
+                                  </ul>
+                                </div>
+                              </td>
+                            </tr>
+                            
+                            <tr data-product="3">
+                              <td class="text-nowrap" data-filter="3">3</td>
+                              <td class="text-nowrap" data-filter="1234567890ADE">1234567890ADE</td>
+                              <td class="text-center" data-filter="Nome3">Nome3</td>
+                              <td class="text-center" data-filter="7">7</td>
+                              <td class="text-center" data-sort="0" data-filter="Disattivato"><span class="label label-warning">Disattivato</span></td>
+                              <td class="text-nowrap" data-filter="Marchio2">Marchio2</td>
+                              <td class="text-center" data-filter="2"><small>x</small>&nbsp;2</td>
+                              <td class="text-nowrap" data-filter="Admin1">Admin1</td>
+                              <td class="text-center st-products__action">
+                                <div class="btn-group dropdown"><a class="btn btn-default btn-xs" href="#">Visualizza</a>
+                                  <button class="btn btn-default btn-xs dropdown-toggle" type="button" data-toggle="dropdown" data-container="body"><span class="caret"></span></button>
+                                  <ul class="dropdown-menu dropdown-menu-right">
+                                    <li><a class="products-edit" data-product="3">Modifica</a></li>
+                                    <li><a class="products-remove" data-product="3">Elimina</a></li>
                                   </ul>
                                 </div>
                               </td>
@@ -155,7 +184,7 @@
                       <div class="st-users__footer clearfix">
                         <div class="pull-left">
                           <div class="select2-sm select2-contented">
-                            <select class="form-control" id="coupons-length" style="width: auto;" data-minimum-results-for-search="Infinity" data-dropdown-css-class="contented">
+                            <select class="form-control" id="products-length" style="width: auto;" data-minimum-results-for-search="Infinity" data-dropdown-css-class="contented">
                               <option value="10">10</option>
                               <option value="25">25</option>
                               <option value="50">50</option>
@@ -164,7 +193,7 @@
                           </div>
                         </div>
                         <div class="pull-right">
-                          <div class="pagination-sm" id="coupons-pagination"></div>
+                          <div class="pagination-sm" id="products-pagination"></div>
                         </div>
                       </div>
                       
@@ -194,7 +223,7 @@
     
     <!-- Page App Modules -->
     <script src="js/modules/widgets/table.js"></script>
-    <script src="js/modules/pages/couponView.js"></script>
+    <script src="js/modules/pages/productView.js"></script>
     
   </body>
   

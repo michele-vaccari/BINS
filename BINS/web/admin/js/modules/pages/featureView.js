@@ -1,5 +1,5 @@
 /**
- * Users page module.
+ * Features page module.
  * @module pages/featureView
  * @author Michele Vaccari
  */

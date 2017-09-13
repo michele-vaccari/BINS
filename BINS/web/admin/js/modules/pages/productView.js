@@ -1,5 +1,5 @@
 /**
- * Users page module.
+ * Products page module.
  * @module pages/productView
  * @author Michele Vaccari
  */
@@ -39,7 +39,7 @@ App.page.products = function() {
       pagination: c.TABLE.PAGINATION,
       dataTable: {
         'columnDefs': [
-          { 'orderable': false, 'targets': [8] }
+          { 'orderable': false, 'targets': [9] }
         ],
         'pagingType': 'numbers',
         'order': [[0, 'asc']],

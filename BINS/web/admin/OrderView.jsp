@@ -13,6 +13,7 @@
 <html lang="it">
   
   <head>
+    
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -23,13 +24,20 @@
     <link rel="apple-touch-icon-precomposed" href="img/apple-touch-favicon.png">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet" type="text/css">
     <link href="libs/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="libs/font-awesome/css/font-awesome.min.css" rel="stylesheet"><!-- Common Libs CSS -->
-    <link href="css/libs.common.min.css" rel="stylesheet"><!-- Page Libs CSS -->
+    <link href="libs/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    
+    <!-- Common Libs CSS -->
+    <link href="css/libs.common.min.css" rel="stylesheet">
+    
+    <!-- Page Libs CSS -->
     <link href="libs/datatables/css/dataTables.bootstrap.css" rel="stylesheet">
-    <link href="libs/datatables/css/select.bootstrap.css" rel="stylesheet"><!-- Just Bootstrap Theme -->
+    <link href="libs/datatables/css/select.bootstrap.css" rel="stylesheet">
+    
+    <!-- Just Bootstrap Theme -->
     <link href="css/just.css" rel="stylesheet"><!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+    
   </head>
   
   <body class="sidebar-collapsible sidebar-open">
@@ -115,6 +123,7 @@
                                 <div class="btn-group dropdown"><a class="btn btn-default btn-xs" href="#">Visualizza</a>
                                   <button class="btn btn-default btn-xs dropdown-toggle" type="button" data-toggle="dropdown" data-container="body"><span class="caret"></span></button>
                                   <ul class="dropdown-menu dropdown-menu-right">
+                                    <li><a class="orders-management" data-order="1">Gestisci</a></li>
                                     <li><a class="orders-edit" data-order="1">Modifica</a></li>
                                     <li><a class="orders-remove" data-order="1">Elimina</a></li>
                                   </ul>
@@ -133,6 +142,7 @@
                                 <div class="btn-group dropdown"><a class="btn btn-default btn-xs" href="#">Visualizza</a>
                                   <button class="btn btn-default btn-xs dropdown-toggle" type="button" data-toggle="dropdown" data-container="body"><span class="caret"></span></button>
                                   <ul class="dropdown-menu dropdown-menu-right">
+                                    <li><a class="orders-management" data-order="1">Gestisci</a></li>
                                     <li><a class="orders-edit" data-order="2">Modifica</a></li>
                                     <li><a class="orders-remove" data-order="2">Elimina</a></li>
                                   </ul>

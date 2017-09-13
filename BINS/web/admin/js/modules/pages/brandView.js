@@ -1,5 +1,5 @@
 /**
- * Users page module.
+ * Brands page module.
  * @module pages/brandView
  * @author Michele Vaccari
  */

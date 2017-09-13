@@ -1,5 +1,5 @@
 /**
- * Users page module.
+ * Wards page module.
  * @module pages/wardView
  * @author Michele Vaccari
  */

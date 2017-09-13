@@ -1,5 +1,5 @@
 /**
- * Users page module.
+ * Coupons page module.
  * @module pages/couponView
  * @author Michele Vaccari
  */

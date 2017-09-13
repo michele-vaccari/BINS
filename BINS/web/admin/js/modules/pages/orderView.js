@@ -1,5 +1,5 @@
 /**
- * Users page module.
+ * Orders page module.
  * @module pages/orderView
  * @author Michele Vaccari
  */

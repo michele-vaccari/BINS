@@ -14,7 +14,15 @@
       <div class="st-sidebar__scroll scrollbar">
         <div class="st-sidebar__nav">
           <ul>
-
+            
+            <!-- Panoramica -->
+            <li><a href="ProfileOverview.jsp">
+                    <div class="fluid-cols">
+                      <div class="min-col"><i class="fa fa-star st-sidebar__ico"></i></div>
+                      <div class="expand-col text-ellipsis"><span class="st-sidebar__title">Panoramica</span></div>
+                    </div></a>
+            </li>
+            
             <!-- Prodotti -->
             <li><a href="#">
                 <div class="fluid-cols">
@@ -24,14 +32,27 @@
                 </div></a>
               <ul class="st-sidebar__nested">
                 <li><a href="ProductView.jsp"><span>Visualizza</span></a></li>
+                <li><a href="ProductForm.jsp"><span>Inserisci</span></a></li>
+              </ul>
+            </li>
+            
+            <!-- Giacenza -->
+            <li><a href="#">
+                <div class="fluid-cols">
+                  <div class="min-col"><i class="st-sidebar__ico">G</i></div>
+                  <div class="expand-col text-ellipsis"><span class="st-sidebar__title">Giacenza</span></div>
+                  <div class="min-col"><i class="fa fa-angle-right st-sidebar__arrow"></i></div>
+                </div></a>
+              <ul class="st-sidebar__nested">
+                <li><a href="StockView.jsp"><span>Visualizza</span></a></li>
                 <li><a href="#">
                     <div class="fluid-cols">
                       <div class="expand-col text-ellipsis"><span class="st-sidebar__title">Inserisci</span></div>
                       <div class="min-col"><i class="fa fa-angle-right st-sidebar__arrow"></i></div>
                     </div></a>
                   <ul class="st-sidebar__nested">
-                    <li><a href="ProductForm.jsp"><span>Deperibile</span></a></li>
-                    <li><a href="ProductForm.jsp"><span>Non Deperibile</span></a></li>
+                    <li><a href="StockForm.jsp"><span>Deperibile</span></a></li>
+                    <li><a href="StockForm.jsp"><span>Non Deperibile</span></a></li>
                   </ul>
                 </li>
               </ul>
@@ -122,7 +143,7 @@
                   <div class="min-col text-right"><span class="label label-success">8</span></div>
                 </div></a>
             </li>
-
+            
           </ul>
         </div>
       </div>
