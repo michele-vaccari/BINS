@@ -110,7 +110,7 @@
                               <div class="form-group">
                                 <label class="col-sm-2 mb control-label">Id</label>
                                 <div class="col-sm-2 mb">
-                                  <input class="form-control" type="text" placeholder="Id">
+                                  <input class="form-control" type="text" placeholder="Id" disabled="disabled">
                                 </div>
                               </div>
                               

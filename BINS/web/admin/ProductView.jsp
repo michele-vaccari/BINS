@@ -103,7 +103,7 @@
                               <th class="text-nowrap content-width">EAN</th>
                               <th class="text-nowrap content-width">Nome</th>
                               <th class="text-nowrap content-width">Tipo</th>
-                              <th class="text-nowrap content-width">Giacenza</th>
+                              <th class="text-nowrap content-width">In Giacenza</th>
                               <th class="text-nowrap content-width">Stato</th>
                               <th class="text-nowrap content-width">Marchio</th>
                               <th class="text-nowrap content-width">Caratteristiche</th>
@@ -120,7 +120,7 @@
                               <td class="text-nowrap" data-filter="1234567890ABC">1234567890ABC</td>
                               <td class="text-center" data-filter="Nome1">Nome1</td>
                               <td class="text-center" data-filter="Deperibile"><span class="label label-warning">Deperibile</span></td>
-                              <td class="text-center content-width" data-filter="3">3</td>
+                              <td class="text-center content-width" data-filter="3"><small>x</small>&nbsp;3</td>
                               <td class="text-center" data-sort="1" data-filter="Attivo"><span class="label label-success">Attivo</span></td>
                               <td class="text-nowrap" data-filter="Marchio1">Marchio1</td>
                               <td class="text-center" data-filter="4"><small>x</small>&nbsp;4</td>
@@ -142,7 +142,7 @@
                               <td class="text-nowrap" data-filter="1234567890ADE">1234567890ADE</td>
                               <td class="text-center" data-filter="Nome3">Nome3</td>
                               <td class="text-center" data-filter="Non Deperibile"><span class="label label-info">Non Deperibile</span></td>
-                              <td class="text-center" data-filter="7">7</td>
+                              <td class="text-center" data-filter="7"><small>x</small>&nbsp;7</td>
                               <td class="text-center" data-sort="0" data-filter="Disattivato"><span class="label label-danger">Disattivato</span></td>
                               <td class="text-nowrap" data-filter="Marchio2">Marchio2</td>
                               <td class="text-center" data-filter="2"><small>x</small>&nbsp;2</td>

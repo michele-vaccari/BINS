@@ -1,10 +1,10 @@
 /**
- * Products page module.
- * @module pages/productView
+ * Brand Form page module.
+ * @module pages/brandForm
  * @author Michele Vaccari
  */
 
-App.page.products = function() {
+App.page.productForm = function() {
 
   /**
    * @const {object} Constant css-selectors to link up with HTML markup.
@@ -28,7 +28,7 @@ App.page.products = function() {
   var s = {
     widgets: {}
   };
-
+  
   function initWidgets() {
     // DataTable Widget
     s.widgets.table = new App.classes.TableWidget({
@@ -39,7 +39,7 @@ App.page.products = function() {
       pagination: c.TABLE.PAGINATION,
       dataTable: {
         'columnDefs': [
-          { 'orderable': false, 'targets': [9] }
+          { 'orderable': false, 'targets': [5] }
         ],
         'pagingType': 'numbers',
         'order': [[0, 'asc']],
@@ -82,12 +82,11 @@ App.page.products = function() {
       }
     })
   }
-  
+
   function init() {
     initWidgets();
+    
     bindUIActions();
-    // Select first product
-    s.widgets.table.dataTable.rows(0).select();
   }
 
   init();

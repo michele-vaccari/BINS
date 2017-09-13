@@ -1,23 +1,23 @@
 /**
  * Products page module.
- * @module pages/productView
+ * @module pages/stockView
  * @author Michele Vaccari
  */
 
-App.page.products = function() {
+App.page.stocks = function() {
 
   /**
    * @const {object} Constant css-selectors to link up with HTML markup.
    */
   var c = {
     TABLE: {
-      TABLE:      '#products-table',
-      INFO:       '#products-info',
-      LENGTH:     '#products-length',
-      SEARCH:     '#products-search',
-      PAGINATION: '#products-pagination',
+      TABLE:      '#stocks-table',
+      INFO:       '#stocks-info',
+      LENGTH:     '#stocks-length',
+      SEARCH:     '#stocks-search',
+      PAGINATION: '#stocks-pagination',
     ACTIONS: {
-        REMOVE:   '.products-remove'
+        REMOVE:   '.stocks-remove'
       }
     }
   }
@@ -39,13 +39,13 @@ App.page.products = function() {
       pagination: c.TABLE.PAGINATION,
       dataTable: {
         'columnDefs': [
-          { 'orderable': false, 'targets': [9] }
+          { 'orderable': false, 'targets': [6] }
         ],
         'pagingType': 'numbers',
         'order': [[0, 'asc']],
         'select': {
           'style': 'single',
-          'selector': 'td:not(.st-products__action)'
+          'selector': 'td:not(.st-stocks__action)'
         }
       }
     });
@@ -55,14 +55,14 @@ App.page.products = function() {
     
     // Remove Product
     $(document).on('click', c.TABLE.ACTIONS.REMOVE, function() {
-      var id = $(this).data('product'),
-          row = s.widgets.table.dataTable.row('[data-product="' + id + '"]'),
-          product = row.data();
+      var id = $(this).data('stock'),
+          row = s.widgets.table.dataTable.row('[data-stock="' + id + '"]'),
+          stock = row.data();
 
-      if (product) {
+      if (stock) {
         bootbox.confirm({
           title: "Elimina Prodotto?",
-          message: "Vuoi davvero eliminare il prodotto con id <b>" + product[0]['display'] + "</b>?",
+          message: "Vuoi davvero eliminare la giacenza con id <b>" + stock[0]['display'] + "</b>?",
           backdrop: true,
           buttons: {
             cancel: {
@@ -86,7 +86,7 @@ App.page.products = function() {
   function init() {
     initWidgets();
     bindUIActions();
-    // Select first product
+    // Select first stock
     s.widgets.table.dataTable.rows(0).select();
   }
 

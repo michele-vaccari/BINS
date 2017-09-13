@@ -40,11 +40,12 @@
             <li><a href="#">
                 <div class="fluid-cols">
                   <div class="min-col"><i class="st-sidebar__ico">G</i></div>
-                  <div class="expand-col text-ellipsis"><span class="st-sidebar__title">Giacenza</span></div>
+                  <div class="expand-col text-ellipsis"><span class="st-sidebar__title">Giacenze</span></div>
                   <div class="min-col"><i class="fa fa-angle-right st-sidebar__arrow"></i></div>
                 </div></a>
               <ul class="st-sidebar__nested">
                 <li><a href="StockView.jsp"><span>Visualizza</span></a></li>
+                <!--
                 <li><a href="#">
                     <div class="fluid-cols">
                       <div class="expand-col text-ellipsis"><span class="st-sidebar__title">Inserisci</span></div>
@@ -55,6 +56,7 @@
                     <li><a href="StockForm.jsp"><span>Non Deperibile</span></a></li>
                   </ul>
                 </li>
+                -->
               </ul>
             </li>
             
