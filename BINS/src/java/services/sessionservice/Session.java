@@ -1,45 +1,49 @@
-/*
- * Session.java
- *
- */
-
 package services.sessionservice;
 
 import java.util.*;
 import javax.servlet.http.*;
 
-//import util.*;
 import services.errorservice.*;
 import services.databaseservice.*;
 import services.databaseservice.exception.*;
 
-
-//import blogics.*;
+import blogics.*;
 
 public class Session {
   
+  /* Costruttore */
   public Session() {}
   
-  public static Cookie[] createCookie(DataBase database, String userCode) 
+  /* Metodo createCookie */
+  public static Cookie[] createCookie(DataBase database, String email) 
   throws NotFoundDBException,ResultSetDBException {
     
     Cookie[] cookies=new Cookie[2];
     Cookie cookie;
     
-//    User user=UserService.getUser(database,userCode);
-//    
-//    cookie=new Cookie("userCode",user.userCode);
-//    cookies[0]=cookie;
-//    
-//    cookie=new Cookie("userName",user.firstname+"#"+user.surname);
-//    cookies[1]=cookie;
-//    
-//    for (int i=0; i<cookies.length; i++) {
-//      cookies[i].setPath("/");
-//    }
+    Admin admin= AdminService.getAdmin(database, email);
+    
+    cookie= new Cookie("email", admin.getEmail());
+    cookies[0]= cookie;
+    
+    cookie= new Cookie("adminName", admin.getNome()+ "#" + admin.getCognome());
+    cookies[1]= cookie;
+    
+    for (int i=0; i<cookies.length; i++)
+      cookies[i].setPath("/");
     
     return cookies;
   }
+  
+  /* Metodo deleteCookie */
+  public static Cookie[] deleteCookie(Cookie[] cookies) {
+    for (int i=0; i<cookies.length; i++) {
+      cookies[i].setMaxAge(0);
+      cookies[i].setPath("/");
+    }
+    return cookies;
+  }
+  
   
   public static String getValue(Cookie cookies[], String name, int position) {
     
@@ -68,17 +72,7 @@ public class Session {
   
   public static String getUserSurname(Cookie[] cookies) {
     return getValue(cookies, "userName", 1);
-  } 
-    
-  public static Cookie[] deleteCookie(Cookie[] cookies) {
-    
-    for (int i=0; i<cookies.length; i++) {
-      cookies[i].setMaxAge(0);
-      cookies[i].setPath("/");
-    }
-    
-    return cookies;
-  }  
+  }
   
   public static void showCookies(Cookie[] cookies){
     

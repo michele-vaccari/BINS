@@ -1,12 +1,11 @@
- 
 package global;
 
 public class Constants {
-        
+  
   /* Constants for language codes */
   public static final String CD_LANGUAGE_ITALIAN = "ITA";
   public static final String CD_LANGUAGE_ENGLISH = "ENG";
-              
+  
   /* Contants for Mail Service.
    * Choose between (YES,NO,TEST).
    */
@@ -20,8 +19,8 @@ public class Constants {
   /** Constants for db connection */
   public static final String DB_USER_NAME         = "root";
   public static final String DB_PASSWORD          = "";  
-  public static final String DB_CONNECTION_STRING = "jdbc:mysql://localhost/rubrica?user="+DB_USER_NAME+"&password="+DB_PASSWORD;
-    
+  public static final String DB_CONNECTION_STRING = "jdbc:mysql://localhost/bins?user="+DB_USER_NAME+"&password="+DB_PASSWORD;
+  
   /* Constants for log files*/
   public final static String LOG_DIR = "D:\\logs\\";
   public final static String FRONTEND_ERROR_LOG_FILE = LOG_DIR + "frontenderror.log";
@@ -32,6 +31,4 @@ public class Constants {
   public final static String DATABASE_SERVICE_LOG_FILE = LOG_DIR + "databaseservice.log";  
   public final static String MAIL_SERVICE_LOG_FILE = LOG_DIR + "mailservice.log";
   public static final String APPLICATION_MANAGER_MAIL = "null@null.com";
-      
-  
 }

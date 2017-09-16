@@ -9,6 +9,11 @@
 <%@ page buffer="30kb" %>
 <%@ page errorPage="/ErrorPage.jsp" %>
 
+<%@ page import="services.sessionservice.*" %>
+
+<jsp:useBean id="logonManagement" scope="page" class="bflows.LogonManagement" />
+<jsp:setProperty name="logonManagement" property="*" />
+
 <!DOCTYPE html>
 <html lang="it">
   
@@ -48,12 +53,13 @@
                 </div>
               </div>
               <div class="st-panel__content">
-                <form class="form" id="login-form" action="index.html" method="post">
+                
+                <form class="form" name="logonForm" id="login-form" action="ProfileOverview.jsp" method="post">
                   <div class="form-group">
-                    <input class="form-control" id="login-email" type="email" placeholder="Email" required>
+                    <input class="form-control" id="login-email" name="email" type="email" placeholder="Email" required>
                   </div>
                   <div class="form-group">
-                    <input class="form-control" id="login-password" type="password" placeholder="Password" required>
+                    <input class="form-control" id="login-password" name="password" type="password" placeholder="Password" required>
                   </div>
                   <div class="form-group">
                     <div class="fluid-cols">
@@ -71,6 +77,7 @@
                     </div>
                   </div>
                 </form>
+                
               </div>
             </div>
           </div>
